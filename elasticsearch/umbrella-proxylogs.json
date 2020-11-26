@@ -1,0 +1,29 @@
+{
+    "mappings": {
+        "properties": {
+            "timestamp": { "type": "date", "format": "yyyy-MM-dd HH:mm:ss"},
+            "identities": { "type": "keyword" },
+            "internalIp": { "type": "ip" },
+            "externalIp": { "type": "ip" },
+            "destinationIp": {"type": "ip" },
+            "contentType": { "type": "keyword" },
+            "verdict": { "type": "keyword" },
+            "url": { "type": "keyworkd" },
+            "referer": { "type": "keyword" },
+            "userAgent": { "type": "keyword" },
+            "statusCode": { "type": "keyword" },
+            "requestSize": { "type": "long" },
+            "responseSize": { "type": "long" },
+            "responseBodySize": { "type": "long" },
+            "digest": { "type": "keyword" },
+            "categories": { "type": "keyword" },
+            "avDetections": {"type": "keyword" },
+            "potentialUnwantedApps": { "type": "keyword" },
+            "ampDisposition": { "type": "keyword" },
+            "ampMalwareName": { "type": "keyword" },
+            "ampScore": { "type": "integer" },
+            "identityTypes": { "type": "keyword" },
+            "blockedCategories": { "type": "keyword" }
+        }
+    }
+}
