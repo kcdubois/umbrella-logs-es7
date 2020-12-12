@@ -2,26 +2,20 @@ version: "3"
 
 services:
   logstash:
-    image: docker.elastic.co/logstash/logstash:7.10.0
+    image: docker.elastic.co/logstash/logstash-oss:7.10.0
     volumes:
       - ./logstash:/usr/share/logstash/pipeline
-    environment:
-      ELASTICSEARCH_HOST: elasticsearch
-      S3_ACCESS_KEY: access_key
-      S3_SECRET_KEY: secret_key
-      S3_REGION: us-east-2
-      S3_BUCKET: cisco-managed-us-east-2
-      S3_PREFIX: prefix-name
+    env_file: .env/elasticsearch.env
   
   elasticsearch:
-    image: docker.elastic.co/elasticsearch/elasticsearch:7.10.0
+    image: docker.elastic.co/elasticsearch/elasticsearch-oss:7.10.0
     environment:
       discovery.type: single-node
     volumes:
       - data:/usr/share/elasticsearch/data
 
   kibana:
-    image: docker.elastic.co/elasticsearch/elasticsearch:7.10.0
+    image: docker.elastic.co/kibana/kibana-oss:7.10.0
     ports:
       - "5601:5601"
   
