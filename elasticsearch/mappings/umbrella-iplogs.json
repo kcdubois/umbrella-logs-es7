@@ -1,13 +1,28 @@
 {
-    "mappings": {
-        "properties": {
-            "timestamp": { "type": "date", "format": "yyyy-MM-dd HH:mm:ss"},
-            "identity": { "type": "keyword" },
-            "sourceIp": { "type": "ip" },
-            "sourcePort": { "type": "integer" },
-            "destinationIp": { "type": "ip" },
-            "DestinationPort": {"type": "integer" },
-            "categories": { "type": "keyword" }
-        }
+  "mappings": {
+    "properties": {
+      "timestamp": {
+        "type": "date",
+        "format": "yyyy-MM-dd HH:mm:ss"
+      },
+      "identity": {
+        "type": "keyword"
+      },
+      "sourceIp": {
+        "type": "ip"
+      },
+      "sourcePort": {
+        "type": "integer"
+      },
+      "destinationIp": {
+        "type": "ip"
+      },
+      "DestinationPort": {
+        "type": "integer"
+      },
+      "categories": {
+        "type": "keyword"
+      }
     }
+  }
 }

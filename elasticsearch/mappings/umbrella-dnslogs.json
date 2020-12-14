@@ -1,56 +1,23 @@
-// PUT _index_template/umbrella-dns
 {
-    "index_patterns": ["umbrella-dns*"],
-    "_meta": {
-      "description": "Index template for Umbrella DNS logs"
-    },
-    "template": {
-      "settings": {
-        "number_of_replicas": 1
-      },
-      "mappings": {
-          "properties": {
-            "action": {
-              "type": "keyword"
-            },
-            "blockedCategories": {
-              "type": "keyword"
-            },
-            "categories": {
-              "type": "keyword"
-            },
-            "domain": {
-              "type": "keyword"
-            },
-            "externalIp": {
-              "type": "ip"
-            },
-            "identities": {
-              "type": "keyword"
-            },
-            "identityTypes": {
-              "type": "keyword"
-            },
-            "internalIp": {
-              "type": "ip"
-            },
-            "mostGranularIdentity": {
-              "type": "keyword"
-            },
-            "mostGranularIdentityType": {
-              "type": "keyword"
-            },
-            "queryType": {
-              "type": "keyword"
-            },
-            "responseCode": {
-              "type": "keyword"
-            },
-            "timestamp": {
-              "type": "date",
-              "format": "yyyy-MM-dd HH:mm:ss"
+  "mappings": {
+    "properties": {
+      "source": {
+        "properties": {
+          "identity": {
+            "properties": {
+              "name": { "type": "keyword" },
+              "type": { "type": "keyword" }
             }
+          },
+          "identities": { "type": "keyword" }
+        }
+      },
+      "destination": {
+        "properties": {
+          "categories": { "type": "text" },
+          "blocked_categories": { "type": "text" }
         }
       }
     }
   }
+}

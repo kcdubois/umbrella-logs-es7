@@ -2,20 +2,20 @@ version: "3"
 
 services:
   logstash:
-    image: docker.elastic.co/logstash/logstash-oss:7.10.0
+    image: docker.elastic.co/logstash/logstash:7.10.0
     volumes:
       - ./logstash:/usr/share/logstash/pipeline
     env_file: .env/elasticsearch.env
   
   elasticsearch:
-    image: docker.elastic.co/elasticsearch/elasticsearch-oss:7.10.0
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.10.0
     environment:
       discovery.type: single-node
     volumes:
       - data:/usr/share/elasticsearch/data
 
   kibana:
-    image: docker.elastic.co/kibana/kibana-oss:7.10.0
+    image: docker.elastic.co/kibana/kibana:7.10.0
     ports:
       - "5601:5601"
   

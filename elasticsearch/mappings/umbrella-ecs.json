@@ -1,0 +1,51 @@
+{
+  "name": "umbrella-ecs",
+  "body": {
+    "mappings": {
+      "properties": {
+        "ecs": {
+          "properties": {
+            "version": { "type": "keyword" }
+          }
+        },
+        "event": {
+          "properties": {
+            "module": { "type": "keyword" },
+            "dataset": { "type": "keyword" },
+            "action": { "type": "keyword" }
+          }
+        },
+        "source": {
+          "properties": {
+            "ip": { "type": "ip"},
+            "address": { "type": "ip" },
+            "port": { "type": "long" },
+            "nat": {
+              "properties": {
+                "ip": { "type": "ip" }
+              }
+            }
+          }
+        },
+        "destination": {
+          "properties": {
+            "ip": { "type": "ip"},
+            "address": { "type": "ip" }, 
+            "port": { "type": "long" },
+            "domain": { "type": "keyword" }
+          }
+        },
+        "dns": {
+          "properties": {
+            "response_code": { "type": "keyword" },
+            "question": {
+              "properties": {
+                "type": { "type": "keyword" }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
